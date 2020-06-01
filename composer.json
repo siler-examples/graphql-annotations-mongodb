@@ -1,0 +1,22 @@
+{
+    "name": "siler-examples/graphql-annotations-mongodb",
+    "description": "Example application of a Siler-powered GraphQL API using Annotations and MongoDB.",
+    "type": "project",
+    "require": {
+        "php": "^7.4",
+        "ext-mongodb": "^1.7",
+        "leocavalcante/siler": "dev-master",
+        "webonyx/graphql-php": "^0.13.8",
+        "doctrine/annotations": "^1.10",
+        "mongodb/mongodb": "^1.6"
+    },
+    "require-dev": {},
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "leocavalcante",
+            "email": "lc@leocavalcante.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
