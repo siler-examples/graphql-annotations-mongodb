@@ -1,0 +1,5 @@
+type Query {
+  # Just a regular greeting
+  hello: String!
+}
+
