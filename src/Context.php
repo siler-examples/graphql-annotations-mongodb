@@ -2,7 +2,9 @@
 
 namespace App;
 
+use MongoDB\Client;
+
 final class Context
 {
-
+    public Client $mongodb;
 }

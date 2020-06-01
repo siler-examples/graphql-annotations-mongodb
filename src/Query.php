@@ -21,4 +21,16 @@ final class Query
     {
         return $rootValue->hello;
     }
+
+    /**
+     * @Field(listOf=Greet::class)
+     * @param RootValue $rootValue
+     * @param array $args
+     * @param Context $context
+     * @return array
+     */
+    static public function greetings(RootValue $rootValue, array $args, Context $context): array
+    {
+        return $context->mongodb->test->greetings->find()->toArray();
+    }
 }
