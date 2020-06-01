@@ -1,0 +1,10 @@
+{
+  "name": "GraphQL Annotations MongoDB",
+  "extensions": {
+    "endpoints": {
+      "Default GraphQL Endpoint": {
+        "url": "http://localhost:8000/graphql"
+      }
+    }
+  }
+}

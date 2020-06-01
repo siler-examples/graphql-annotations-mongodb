@@ -18,5 +18,10 @@
             "email": "lc@leocavalcante.com"
         }
     ],
-    "minimum-stability": "stable"
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
 }
