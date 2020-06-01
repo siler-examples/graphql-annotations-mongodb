@@ -4,5 +4,5 @@ namespace App;
 
 final class RootValue
 {
-
+    public string $hello = 'Hello, World!';
 }

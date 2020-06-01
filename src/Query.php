@@ -11,10 +11,14 @@ use Siler\GraphQL\Annotation\ObjectType;
 final class Query
 {
     /**
-     * @Field()
+     * @Field(description="Just a regular greeting")
+     * @param RootValue $rootValue
+     * @param array $args
+     * @param Context $context
+     * @return string
      */
-    static public function hello(): string
+    static public function hello(RootValue $rootValue, array $args, Context $context): string
     {
-        return 'Hello, World!';
+        return $rootValue->hello;
     }
 }
