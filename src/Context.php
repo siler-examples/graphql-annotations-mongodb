@@ -2,9 +2,9 @@
 
 namespace App;
 
-use MongoDB\Client;
+use Doctrine\ODM\MongoDB\DocumentManager;
 
 final class Context
 {
-    public Client $mongodb;
+    public DocumentManager $dm;
 }

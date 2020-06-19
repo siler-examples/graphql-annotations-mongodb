@@ -8,7 +8,9 @@
         "leocavalcante/siler": "dev-master",
         "webonyx/graphql-php": "^0.13.8",
         "doctrine/annotations": "^1.10",
-        "mongodb/mongodb": "^1.6"
+        "mongodb/mongodb": "^1.6",
+        "doctrine/mongodb-odm": "^2.1",
+        "symfony/dotenv": "^5.1"
     },
     "require-dev": {},
     "license": "MIT",

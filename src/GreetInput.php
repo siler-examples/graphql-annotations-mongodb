@@ -16,10 +16,5 @@ final class GreetInput
     /**
      * @Field()
      */
-    public string $_id;
-
-    /**
-     * @Field()
-     */
     public string $text;
 }

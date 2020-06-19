@@ -5,7 +5,7 @@ namespace App;
 use Siler\GraphQL\Annotation\Args;
 use Siler\GraphQL\Annotation\Field;
 use Siler\GraphQL\Annotation\ObjectType;
-use function Siler\array_get_arr;
+use function Siler\Obj\patch;
 
 /**
  * @ObjectType()
@@ -18,8 +18,11 @@ final class Mutation
      */
     static public function setMessage(RootValue $root, array $args, Context $context): string
     {
-        $input = GreetInput::fromArray(array_get_arr($args, 'input'));
-        $result = $context->mongodb->test->greetings->insertOne($input);
-        return $result->getInsertedId();
+        $greet = Greet::fromArray($args['input']);
+
+        $context->dm->persist($greet);
+        $context->dm->flush();
+
+        return $greet->_id;
     }
 }

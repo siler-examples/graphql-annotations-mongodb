@@ -31,6 +31,6 @@ final class Query
      */
     static public function greetings(RootValue $rootValue, array $args, Context $context): array
     {
-        return $context->mongodb->test->greetings->find()->toArray();
+        return $context->dm->getRepository(Greet::class)->findAll();
     }
 }
