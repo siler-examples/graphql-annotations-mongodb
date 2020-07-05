@@ -2,33 +2,18 @@
 
 namespace App;
 
-use Siler\GraphQL\Annotation\Field;
-use Siler\GraphQL\Annotation\ObjectType;
+use Siler\GraphQL\Annotation as GQL;
 
-/**
- * @ObjectType()
- */
+/** @GQL\ObjectType() */
 final class Query
 {
-    /**
-     * @Field(description="Just a regular greeting")
-     * @param RootValue $rootValue
-     * @param array $args
-     * @param Context $context
-     * @return string
-     */
+    /** @GQL\Field(description="Just a regular greeting") */
     static public function hello(RootValue $rootValue, array $args, Context $context): string
     {
         return $rootValue->hello;
     }
 
-    /**
-     * @Field(listOf=Greet::class)
-     * @param RootValue $rootValue
-     * @param array $args
-     * @param Context $context
-     * @return array
-     */
+    /** @GQL\Field(listOf=Greet::class) */
     static public function greetings(RootValue $rootValue, array $args, Context $context): array
     {
         return $context->dm->getRepository(Greet::class)->findAll();

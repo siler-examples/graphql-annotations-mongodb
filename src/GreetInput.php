@@ -2,19 +2,18 @@
 
 namespace App;
 
-use Siler\GraphQL\Annotation\Field;
-use Siler\GraphQL\Annotation\InputType;
+use Siler\GraphQL\Annotation as GQL;
 use Siler\Prelude\FromArray;
 
 /**
- * @InputType()
+ * @GQL\InputType()
  */
 final class GreetInput
 {
     use FromArray;
 
     /**
-     * @Field()
+     * @GQL\Field()
      */
     public string $text;
 }

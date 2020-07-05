@@ -2,19 +2,16 @@
 
 namespace App;
 
-use Siler\GraphQL\Annotation\Args;
-use Siler\GraphQL\Annotation\Field;
-use Siler\GraphQL\Annotation\ObjectType;
-use function Siler\Obj\patch;
+use Siler\GraphQL\Annotation as GQL;
 
 /**
- * @ObjectType()
+ * @GQL\ObjectType()
  */
 final class Mutation
 {
     /**
-     * @Field()
-     * @Args({@Field(name="input", type=GreetInput::class)})
+     * @GQL\Field()
+     * @GQL\Args({@GQL\Field(name="input", type=GreetInput::class)})
      */
     static public function setMessage(RootValue $root, array $args, Context $context): string
     {

@@ -2,34 +2,31 @@
 
 namespace App;
 
-use Doctrine\ODM\MongoDB\Mapping\Annotations\Document;
-use Doctrine\ODM\MongoDB\Mapping\Annotations\Id;
-use Siler\GraphQL\Annotation\Field;
-use Siler\GraphQL\Annotation\ObjectType;
-use Doctrine\ODM\MongoDB\Mapping\Annotations\Field as MField;
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+use Siler\GraphQL\Annotation as GQL;
 use Siler\Prelude\FromArray;
 
 /**
- * @ObjectType()
- * @Document(collection="greetings")
+ * @GQL\ObjectType()
+ * @ODM\Document(collection="greetings")
  */
 final class Greet
 {
     use FromArray;
 
     /**
-     * @Field()
-     * @Id
+     * @GQL\Field()
+     * @ODM\Id()
      */
     public string $_id;
     /**
-     * @Field()
-     * @MField(type="string")
+     * @GQL\Field()
+     * @ODM\Field(type="string")
      */
     public string $text;
 
     /**
-     * @Field()
+     * @GQL\Field()
      */
     public function upperCaseText(): string
     {
